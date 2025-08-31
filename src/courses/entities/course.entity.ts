@@ -3,10 +3,8 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class Course extends Document {
-  
-
   @Prop({ required: true })
-  slug: string;
+  part: string; 
 
   @Prop({ required: true })
   title: string;

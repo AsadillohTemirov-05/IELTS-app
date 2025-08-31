@@ -7,12 +7,13 @@ import { CoursesModule } from './courses/courses.module';
 import { AuthModule } from './auth/auth.module';
 import { databaseConfig } from './config/database.config';
 import { MongooseModule } from '@nestjs/mongoose';
+import { LessonsModule } from './lessons/lessons.module';
 
 @Module({
 
   imports: [
     MongooseModule.forRoot(databaseConfig.uri),
-    UsersModule, StatsModule, CoursesModule, AuthModule],
+    UsersModule, StatsModule, CoursesModule, AuthModule, LessonsModule],
   controllers: [AppController],
   providers: [AppService],
 })

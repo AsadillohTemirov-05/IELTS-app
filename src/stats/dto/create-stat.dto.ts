@@ -13,3 +13,13 @@ export class CreateStatDto {
   @IsString()
   color: string;
 }
+
+
+
+export class UpdateStatDto{
+
+  icon?:string;
+  value?:string;
+  label?:string;
+  color?:string;
+}
