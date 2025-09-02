@@ -28,7 +28,7 @@ export class CreateCourseQuestionDto {
 
   @IsNumber()
   @Min(0)
-  @Max(3) // Assuming 4 options as per provided data
+  @Max(3)
   correctAnswer: number;
 }
 
