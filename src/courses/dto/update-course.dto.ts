@@ -1,11 +1,9 @@
 import { IsString, IsNumber, IsOptional } from 'class-validator';
 
 export class UpdateCourseDto {
- 
-
   @IsString()
   @IsOptional()
-  slug?: string;
+  part?: string;
 
   @IsString()
   @IsOptional()
@@ -30,7 +28,6 @@ export class UpdateCourseDto {
   @IsString()
   @IsOptional()
   duration?: string;
-
 
   @IsNumber()
   @IsOptional()

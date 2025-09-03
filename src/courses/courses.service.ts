@@ -13,6 +13,19 @@ export class CoursesService {
     return this.courseModel.find().exec();
   }
 
+
+      async findByPart(part: string): Promise<Course[]> {
+    const courses = await this.courseModel.find({ part }).exec();
+    if (!courses || courses.length === 0) {
+      throw new NotFoundException(`No courses found for part: ${part}`);
+    }
+    return courses;
+  }
+
+
+  
+
+
   async create(createCourseDto: CreateCourseDto): Promise<Course> {
     const course = new this.courseModel(createCourseDto);
     return course.save();

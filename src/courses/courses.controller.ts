@@ -2,7 +2,6 @@ import { Controller, Get, Post, Put, Delete, Param, Body, UseGuards } from '@nes
 import { CoursesService } from './courses.service';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
-import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 
 @Controller('courses')
 
@@ -12,6 +11,13 @@ export class CoursesController {
   @Get()
   findAll() {
     return this.coursesService.findAll();
+  }
+
+
+  
+ @Get('part/:part')
+  findByPart(@Param('part') part: string) {
+    return this.coursesService.findByPart(part);
   }
 
   @Post()
