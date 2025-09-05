@@ -3,7 +3,7 @@ import { Document } from 'mongoose';
 
 @Schema()
 export class CourseQuestion extends Document {
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true })
   part: string; 
 
   @Prop({ required: true })
